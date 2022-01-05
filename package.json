@@ -1,0 +1,25 @@
+{
+  "name": "thebozzbot",
+  "version": "0.0.1",
+  "description": "a random discord bot",
+  "main": "index.js",
+  "author": "TheHackerCoding",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.0",
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node dist/index",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index"
+  }
+}
