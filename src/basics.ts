@@ -1,7 +1,6 @@
 import Help from "./help";
-import Plugin from "./Plugin";
-
-const basics = new Plugin(({ client, prefix, commands }) => {
+import Component from "./Component";
+const basics = new Component(({ client, prefix, commands }) => {
   client.on("ready", () => {
     console.log("Bot ready!");
     console.log(`Logged in as ${client.user ? client.user.tag : null}!`);

@@ -8,6 +8,6 @@ export interface CommandCallbackParams {
 
 export type CommandCallback = (params: CommandCallbackParams) => void;
 
-export type PluginCallbackParams = Bot;
+export type ComponentCallbackParams = Bot;
 
-export type PluginCallback = (params: PluginCallbackParams) => void;
+export type ComponentCallback = (params: ComponentCallbackParams) => void;

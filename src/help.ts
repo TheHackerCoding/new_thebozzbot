@@ -25,7 +25,7 @@ export default class ParticalHelp {
 
   command(args: string[], msg: Message) {
     if (args.length !== 0) {
-      return
+      this.specific(args[0], msg)
     } else {
       this.general(msg);
     }
@@ -48,7 +48,31 @@ export default class ParticalHelp {
     })
   }
   
-  specific()
+  specific(x: string, msg: Message) {
+    let command = this.commands.find(ele => ele.name === x)
+    if (command) {
+      let embed = HelperEmbed({
+        title: `Command: ${command.name}`,
+        fields: [
+          {
+            name: "Description",
+            value: command.description,
+            inline: false
+          },
+          {
+            name: "Example",
+            value: "`" + command.example + "`",
+            inline: false
+          }
+        ]
+      })
+      msg.channel.send({
+        embeds: [embed]
+      })
+    } else {
+      msg.reply(`There's no such command called ${x}!`)
+    }
+  }
 
   commandNames(x: Command[]) {
     function structure(y: string[]) {
